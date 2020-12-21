@@ -299,7 +299,6 @@ class SearchApiElasticsearchBackend extends BackendPluginBase implements PluginF
     $form['fuzziness'] = [
       '#type' => 'select',
       '#title' => t('Fuzziness'),
-      '#required' => TRUE,
       '#options' => $fuzziness_options,
       '#default_value' => $this->configuration['fuzziness'],
       '#description' => $this->t('Some queries and APIs support parameters to allow inexact fuzzy matching, using the fuzziness parameter. See <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#fuzziness">Fuzziness</a> for more information.'),
