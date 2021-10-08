@@ -136,7 +136,7 @@ class IndexFactory {
           $data[$field->getFieldIdentifier()] = $values;
         }
       }
-      $params['body'][] = ['index' => ['_id' => $id, '_type' => $index->id()]];
+      $params['body'][] = ['index' => ['_id' => $id]];
       $params['body'][] = $data;
     }
 
