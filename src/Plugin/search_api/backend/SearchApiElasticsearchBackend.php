@@ -58,7 +58,7 @@ class SearchApiElasticsearchBackend extends BackendPluginBase implements PluginF
    * Levenshtein distance, falling back to auto behavior. Fuzziness, including
    * auto fuzziness, is defined in the Elasticsearch documentation here:
    *
-   * @see https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#fuzziness
+   * @see https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#fuzziness
    */
   const FUZZINESS_AUTO = 'auto';
 
@@ -291,18 +291,18 @@ class SearchApiElasticsearchBackend extends BackendPluginBase implements PluginF
       '#description' => t('Select the cluster you want to handle the connections.'),
     ];
 
+    // @todo Allow AUTO:[low],[high] parameters and values greater than 5.
     $fuzziness_options = [
-      '' => $this->t('- Disabled -'),
+      '0' => $this->t('- Disabled -'),
       self::FUZZINESS_AUTO => self::FUZZINESS_AUTO,
     ];
-    $fuzziness_options += array_combine(range(0, 5), range(0, 5));
+    $fuzziness_options += array_combine(range(1, 5), range(1, 5));
     $form['fuzziness'] = [
       '#type' => 'select',
       '#title' => t('Fuzziness'),
-      '#required' => TRUE,
       '#options' => $fuzziness_options,
       '#default_value' => $this->configuration['fuzziness'],
-      '#description' => $this->t('Some queries and APIs support parameters to allow inexact fuzzy matching, using the fuzziness parameter. See <a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.6/common-options.html#fuzziness">Fuzziness</a> for more information.'),
+      '#description' => $this->t('Some queries and APIs support parameters to allow inexact fuzzy matching, using the fuzziness parameter. See <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/common-options.html#fuzziness">Fuzziness</a> for more information.'),
     ];
 
     return $form;
