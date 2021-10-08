@@ -78,7 +78,7 @@ class IndexFactory {
    * @return array
    */
   public static function bulkDelete(IndexInterface $index, array $ids) {
-    $params = IndexFactory::index($index);
+    $params = static::index($index);
     foreach ($ids as $id) {
       $params['body'][] = [
         'delete' => [
@@ -141,7 +141,7 @@ class IndexFactory {
     }
 
     // Allow other modules to alter index params before we send them.
-    $indexName = IndexFactory::getIndexName($index);
+    $indexName = static::getIndexName($index);
     $dispatcher = \Drupal::service('event_dispatcher');
     $buildIndexParamsEvent = new BuildIndexParamsEvent($params, $indexName);
     $event = $dispatcher->dispatch(BuildIndexParamsEvent::BUILD_PARAMS, $buildIndexParamsEvent);
