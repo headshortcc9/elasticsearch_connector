@@ -5,7 +5,7 @@
   "homepage": "https://www.drupal.org/project/elasticsearch_connector",
   "repositories": [
     {
-      "type": "git"
+      "type": "git",
       "url": "https://github.com/headshortcc9/nodespark-des-connector.git"
     },
     {
