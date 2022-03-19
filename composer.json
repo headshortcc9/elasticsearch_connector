@@ -7,8 +7,8 @@
     "nodespark/des-connector": "dev-custom",
     "makinacorpus/php-lucene": "^1.0.2"
   },
-  "repositories": {
-    "custom":{
+  "repositories": [
+    {
       "type": "package",
       "package": {
           "name": "nodespark/des-connector",
@@ -21,11 +21,11 @@
           }
       }
     },
-    "drupal": {
+    {
       "type": "composer",
       "url": "https://packages.drupal.org/7"
     }
-  },
+  ],
   "require-dev": {
     "drupal/search_api": "^1.4",
     "behat/mink-selenium2-driver": "^1.3",
