@@ -3,10 +3,6 @@
   "description": "Elasticsearch Connector module for Drupal.",
   "type": "drupal-module",
   "homepage": "https://www.drupal.org/project/elasticsearch_connector",
-  "require": {
-    "nodespark/des-connector": "dev-custom",
-    "makinacorpus/php-lucene": "^1.0.2"
-  },
   "repositories": [
     {
       "type": "package",
@@ -26,6 +22,10 @@
       "url": "https://packages.drupal.org/7"
     }
   ],
+  "require": {
+    "nodespark/des-connector": "dev-custom",
+    "makinacorpus/php-lucene": "^1.0.2"
+  },
   "require-dev": {
     "drupal/search_api": "^1.4",
     "behat/mink-selenium2-driver": "^1.3",
