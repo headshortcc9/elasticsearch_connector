@@ -4,10 +4,23 @@
   "type": "drupal-module",
   "homepage": "https://www.drupal.org/project/elasticsearch_connector",
   "require": {
-    "nodespark/des-connector": "7.x-dev",
+    "nodespark/des-connector": "dev-custom",
     "makinacorpus/php-lucene": "^1.0.2"
   },
   "repositories": {
+    "custom":{
+      "type": "package",
+      "package": {
+          "name": "nodespark/des-connector",
+          "version": "dev-custom",
+          "type": "drupal-module",
+          "source": {
+              "type": "git",
+              "url": "https://github.com/headshortcc9/nodespark-des-connector.git",
+              "reference": "php-8-compatible"
+          }
+      }
+    },
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/7"
