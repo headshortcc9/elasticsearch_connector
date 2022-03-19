@@ -5,16 +5,12 @@
   "homepage": "https://www.drupal.org/project/elasticsearch_connector",
   "repositories": [
     {
-      "type": "git",
-      "url": "https://github.com/headshortcc9/nodespark-des-connector.git"
-    },
-    {
       "type": "composer",
       "url": "https://packages.drupal.org/7"
     }
   ],
   "require": {
-    "nodespark/des-connector": "dev-php-8-compatible",
+    "nodespark/des-connector": "dev-master",
     "makinacorpus/php-lucene": "^1.0.2"
   },
   "require-dev": {
